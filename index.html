@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>H5设计</title>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script type="text/javascript" src="swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="swiper/swiper.animate1.0.2.min.js"></script>
+    <link rel="stylesheet" href="./css/animate.compat.css">
+    <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="swiper/css/animate.min.css" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+
+			}
+			.container {
+				position: fixed;
+				z-index: 10000;
+				opacity: 0.4;
+
+				
+
+				top: 0px;
+				width: 100%;
+
+			}nav {
+				width: 100%;
+				height: 50px;
+				background-color: rgb(51, 73, 94);
+				position: relative;
+				border-radius: 0px;
+				box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+			}
+
+			nav a {
+				position: relative;
+				display: block;
+				float: left;
+				font-size: 15px;
+				line-height: 50px;
+				width: 100px;
+				height: 50px;
+				color: #7FFFD4;
+				text-transform: uppercase;
+				text-decoration: none;
+				text-align: center;
+				z-index: 10;
+			}
+
+			nav a:nth-child(1) {
+				width: 100px;
+			}
+
+			nav a:nth-child(2) {
+				width: 110px;
+			}
+
+			nav a:nth-child(3) {
+				width: 100px;
+			}
+
+			nav a:nth-child(4) {
+				width: 160px;
+			}
+
+			nav a:nth-child(5) {
+				width: 120px;
+			}
+
+			nav .animation {
+				position: absolute;
+				height: 100%;
+				background-color: #f97f51;
+				z-index: 9;
+				border-radius: 8px;
+				transition: all 0.3s;
+			}
+
+			.start-home,
+			nav a:nth-child(1):hover~.animation {
+				width: 100px;
+				left: 0;
+			}
+
+			nav a:nth-child(2):hover~.animation {
+				width: 110px;
+				left: 100px;
+			}
+
+			nav a:nth-child(3):hover~.animation {
+				width: 100px;
+				left: 210px;
+			}
+
+			nav a:nth-child(4):hover~.animation {
+				width: 160px;
+				left: 310px;
+			}
+	
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			.p1 {
+				overflow: hidden;
+				position: absolute;
+				right: 20px;
+				top: -5px;
+				z-index: 1;
+				color: deeppink;
+				font-size: 25px;
+				font-family: "隶书";
+				
+			}
+			.p2 {
+				padding: 0 0 0 5px;
+				position: absolute;
+				overflow: hidden;
+				right: 20px;
+				top: 16px;
+				z-index: 1;
+				color: deeppink;
+				font-size: 25px;
+				font-family: "隶书";
+				
+			}
+			#home,
+			#about,
+			#future {
+				width: 100%;
+				height: 100%;
+			}
+
+
+
+			#home {
+		
+			
+			
+			}
+			.zy {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				font-size: 50px;
+				font-family: "Bodoni MT Black";
+				left: 20%;
+				right: 20%;
+				top:45%;
+				color: #F5F5DC;
+				z-index: 1;
+				
+			}
+		
+			
+			.img1 {
+				position: absolute;
+				background-image: linear-gradient(125deg, #000000,#0b0b17,#0b0b38,#00002b,#311933);
+				background-size: 500%;
+				animation: jianbian 5s infinite;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+
+		
+		@keyframes jianbian {
+			0%{
+				background-position: 0 50%;
+			}
+			50%{
+				background-position: 100% 50%;
+			}
+			100%{
+				background-position: 0 50%;
+			}
+		}
+				
+
+			
+			
+			.about1 {
+				float: left;
+				position: relative;
+				background-color: #00312b;
+				color: #FFFAFA;
+				left: 0px;
+				width: 50%;
+				height: 100%;
+			}
+			.about2 {
+				float: left;
+				position: absolute;
+				background-color: #00312b;
+				color: #FFFAFA;
+				right: 0px;
+				width: 50%;
+				height: 100%;
+			}
+			.swiper-container {
+				background-color: #00312b;
+		        margin: 20px auto;
+		        height: 350px;
+		        width: auto;
+		    }
+
+		    .swiper-slide {
+		        background-position: center;
+		        background-size: contain;
+		        background-repeat: no-repeat;
+		    }
+	
+			#result {
+				background-color: rgb(27,36,47);
+				height: 100%;
+			}
+			.p3 {
+				color: teal;
+				font-family: "华文行楷";
+				font-size: 20px;
+			}
+			td {
+				color: black;
+			}
+			.wrap{
+                width: 100%;
+                position: relative;
+                height: 100%;
+                top: 100px;
+            }
+            .box{
+                position: relative;
+                width: 100%;
+                height: 120px;
+                margin-bottom: 50px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .left,.right{
+                position: relative;
+                width: 40%;
+                height: 120px;
+                border-radius: 0px;
+                text-align: center;
+                color: rgb(151, 41, 65);
+
+            }
+            .box:nth-child(even) .left{
+                background-color: #F5FFFA;
+                box-shadow: 0 0 10px rgba(21, 132, 167, 0.3);
+            }
+            .box:nth-child(odd) .right{
+                background-color: #F5FFFA ;
+               box-shadow: 0 0 10px rgba(21, 132, 167, 0.3);
+            }
+            .center{
+                width: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+             .center>span{
+                width: 120px;
+                border-radius: 10px;
+                text-align:center;
+                font: 900 24px '';
+                line-height: 50px;
+                background-color:#FA8072;
+            }
+			#future {
+				background-color: #2F4F4F;			
+			}
+			.f1 {
+				background-image: url(image/6.jpg);
+				position: absolute;
+				display: flex;
+				flex-flow: column;
+				justify-content: center;
+				align-items: center;
+				left: 0px;
+				width: 50%;
+				height: 100%;
+				color:#FFEFD5;
+				font-family: "华文彩云";
+				font-size:30px;
+
+			}
+			.pp1 {
+				padding: 20px;
+			}
+
+			.f2 {
+			   background-color: #330d2f;
+				position: absolute;
+				width: 50%;
+				height: 100%;
+				right: 0px;
+			}
+			.f3 {
+               
+				position: absolute;
+				justify-content: center;
+				align-content: center;
+				top: 20%;
+				width: 100%;
+				height: 20%;
+				color: #FAEBD7;
+				font-family: "张海山锐谐体";
+				font-size: 40px;
+			}
+			.f4 {
+				position: absolute;
+				justify-content: center;
+				align-content: center;
+				bottom: 10%;
+				width: 100%;
+				height: 80%;
+			}
+
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+				<nav>
+				<a href="#home">home</a>
+				<a href="#about">about</a>
+				<a href="#result">result</a>
+				<a href="#future">future</a>
+				
+				<div class="animation start-home">
+			</nav>
+			</div>
+			
+		</div>
+		
+		<div id="home" >
+				<div class="img1">
+					<div class="zy">
+					<p class=" wow wing animate__delay-3s" >Aar you sure  you want to browse my page！</p>
+				</div>
+				</div>
+			
+				
+			</div>
+		</div>
+        <div id="about">
+        	<div class="about1">
+		      <table border="1" cellpadding="10" width="100%" height="100%" position="absolute">
+				<tr>
+					<th  height="60" colspan="7" bgcolor="#000000" >我的个人简介</th>
+				</tr>
+		 
+				<tr>
+					<th bgcolor="#000000">姓名:</th>
+					<td> 张勇</td>
+					<th bgcolor="#000000">年龄:</th>
+					<td>20</td>
+					<th bgcolor="#000000">民族:</th>
+					<td>彝族</td>
+					<td rowspan="3" width="100"<p><img border="0" src="image/3.jpg" /></p></td>
+				</tr>
+		 
+				<tr>
+					<th bgcolor="#000000">出生日期:</th>
+					<td>2000.1.16</td>
+					<th bgcolor="#000000">政治面貌:</th>
+					<td>团员</td>
+					<th bgcolor="#000000">学历:</th>
+					<td>专科</td>
+				</tr>
+		 
+				<tr>
+					<th bgcolor="#000000">专业:</th>
+					<td>计算机应用技术</td>
+					<th bgcolor="#000000">学校:</th>
+					<td>深圳职业技术学院</td>
+					<th bgcolor="#000000">学号:</th>
+					<td>19660400</td>
+				</tr>
+		 
+				<tr>
+					 <th bgcolor="#000000">爱好:</th>
+					 <td>玩，拆，装</td>
+					 <th bgcolor="#000000">籍贯:</th>
+					 <td>云南</td>
+					 <th bgcolor="#000000">邮箱:</th>
+					 <td colspan="2"><p>972500447@qq.com </p></td>
+				</tr>
+		 
+				<tr>
+					 <th height="130" bgcolor="#000000">个人特长:</th>
+					 <td colspan="6">
+				   <p>我爱计算机，我爱计算机我爱计算机，我爱计算机我爱计算机，我爱计算机</p>
+				   <p>我爱计算机，我爱计算机我爱计算机，我爱计算机我爱计算机，我爱计算机</p>
+				   <p>我爱计算机，我爱计算机我爱计算机，我爱计算机我爱计算机，我爱计算机</p>
+					</td>
+				</tr>
+		 
+				<tr>
+					 <th height="140" bgcolor="#000000"> 自我介绍:</th>
+					 <td colspan="6">
+					<p>来自云南昭通小村里的小张哥，我不爱计算机，不爱计算机</p>
+					<p>来自云南昭通小村里的小张哥，我不爱计算机，不爱计算机</p>
+					<p>来自云南昭通小村里的小张哥，我不爱计算机，不爱计算机</p>
+				</tr>
+			  </table>
+        	</div>
+        	<div class="about2">
+        		<div class="">
+        			
+        			<table border="1" cellpadding="10" width="100%" height="100%" position="absolute">
+				<tr>
+					<th height="60" colspan="7" bgcolor="#000000" >获奖情况</th>
+				</tr>
+		 
+				<tr>
+					<th height="60" bgcolor="#000000">奖项:</th>
+					<td>无</td>
+					<th bgcolor="#000000">发奖单位:</th>
+					<td>深圳职业技术学院</td>
+					<th bgcolor="#000000">等级:</th>
+					<td>一等</td>
+				</tr>
+				<tr>
+					<th height="60" bgcolor="#000000">奖项:</th>
+					<td>无</td>
+					<th bgcolor="#000000">发奖单位:</th>
+					<td>深圳职业技术学院</td>
+					<th bgcolor="#000000">等级:</th>
+					<td>一等</td>
+					
+				</tr>
+		 
+		        <tr>
+					<th height="60" bgcolor="#000000">奖项:</th>
+					<td>无</td>
+					<th bgcolor="#000000">发奖单位:</th>
+					<td>深圳职业技术学院</td>
+					<th bgcolor="#000000">等级:</th>
+					<td>一等</td>
+					
+				</tr>
+		        <tr>
+					<th height="60" bgcolor="#000000">奖项:</th>
+					<td>无</td>
+					<th bgcolor="#000000">发奖单位:</th>
+					<td>深圳职业技术学院</td>
+					<th bgcolor="#000000">等级:</th>
+					<td>一等</td>
+				</tr>
+			  </table>
+        		</div>
+		      <div>
+				<div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide" style="background-image:url(image/1.jpg)"></div>
+			            <div class="swiper-slide" style="background-image:url(image/6.webp)"></div>
+			            <div class="swiper-slide" style="background-image:url(image/8.jpg)"></div>
+			        </div>
+			        <div class="swiper-pagination"></div>
+			    
+			     </div>
+		      </div>
+
+        	</div>
+        </div>
+        <div id="result">
+        	 <div class="wrap">
+            <div class="box">
+                 <div class="left wow slideInLeft animate__delay-3s"><p class="p3">生活中只有一种英雄主义，那就是认清生活的真相之后依然热爱他。
+                             ——罗曼罗兰</p>
+                </div>
+                <div class="center"><span>
+                    2019
+                </span></div>
+                 <div class="right wow lightSpeedInRight animate__delay-3s">
+	                <table border="0s" cellpadding="10" width="100%" height="100%" position="absolute">
+					 <tr>
+						<td>学期</td>
+						<td>学科</td>
+						<td>等级</td>
+						<td>绩点</td>
+					</tr>
+					 <tr>
+						<td bgcolor="#D2B48C">1</td>
+						<td bgcolor="#D2B48C">计算机应用A</td>
+						<td bgcolor="#D2B48C">A</td>
+						<td bgcolor="#D2B48C">3</td>
+					</tr>
+			        <tr>
+                        <td bgcolor="#708090">1</td>
+                        <td bgcolor="#708090">C语言</td>
+                        <td bgcolor="#708090">B</td>
+                        <td bgcolor="#708090">3</td>
+                    </tr>
+				    </table>
+                </div>
+            </div>
+      
+            <div class="box">
+                 <div class="left wow headShake animate__delay-3s">
+                 	 <table border="0" cellpadding="10" width="100%" height="100%" position="absolute">
+					 <tr>
+						<td>学期</td>
+						<td>学科</td>
+						<td>等级</td>
+						<td>绩点</td>
+					</tr>
+					 <tr>
+						<td bgcolor="#D2B48C">1</td>
+						<td bgcolor="#D2B48C">计算机应用A</td>
+						<td bgcolor="#D2B48C">A</td>
+						<td bgcolor="#D2B48C">3</td>
+					</tr>
+			         <tr>
+						<td bgcolor="#708090">1</td>
+						<td bgcolor="#708090">C语言</td>
+						<td bgcolor="#708090">B</td>
+						<td bgcolor="#708090">3</td>
+					</tr>
+				    </table>
+                </div>
+                <div class="center"><span>
+                    2020
+                </span></div>
+                <div class="right wow lightSpeedInRight animate__delay-3s">
+                	<p class="p3">我有一切应该幸福的条件，而且不管我的精神如何苦恼，我想我应该一直是幸福的，只要我始终能把内心洋溢的欣悦传达给别人。</p>
+                </div>
+            </div>
+      
+            <div class="box">
+                 <div class="left wow headShake animate__delay-3s">
+                 	<p class="p3">人们常觉得准备的阶段是在浪费时间，只有当真正的机会来临，而自己没有能力把握的时候，才能觉悟到自己平时没有准备才是浪费了时间。</p>
+                </div>
+                <div class="center"><span>
+                    2020
+                </span></div>
+                <div class="right wow lightSpeedInRight animate__delay-3s">
+                	 <table border="0" cellpadding="10" width="100%" height="100%" position="absolute">
+					 <tr>
+						<td>学期</td>
+						<td>学科</td>
+						<td>等级</td>
+						<td>绩点</td>
+					</tr>
+					 <tr>
+						<td bgcolor="#D2B48C">1</td>
+						<td bgcolor="#D2B48C">计算机应用A</td>
+						<td bgcolor="#D2B48C">A</td>
+						<td bgcolor="#D2B48C">3</td>
+					</tr>
+			         <tr>
+                        <td bgcolor="#708090">1</td>
+                        <td bgcolor="#708090">C语言</td>
+                        <td bgcolor="#708090">B</td>
+                        <td bgcolor="#708090">3</td>
+                    </tr>
+				    </table>
+                </div>
+            </div>
+      
+            <div class="box">
+                 <div class="left wow headShake animate__delay-3s">
+                 	 <table border="0" cellpadding="10" width="100%" height="100%" position="absolute">
+					 <tr>
+						<td>学期</td>
+						<td>学科</td>
+						<td>等级</td>
+						<td>绩点</td>
+					</tr>
+					 <tr>
+						<td bgcolor="#D2B48C">1</td>
+						<td bgcolor="#D2B48C">计算机应用A</td>
+						<td bgcolor="#D2B48C">A</td>
+						<td bgcolor="#D2B48C">3</td>
+					</tr>
+			        <tr>
+                        <td bgcolor="#708090">1</td>
+                        <td bgcolor="#708090">C语言</td>
+                        <td bgcolor="#708090">B</td>
+                        <td bgcolor="#708090">3</td>
+                    </tr>
+				    </table>
+                </div>
+                <div class="center"><span>
+                    2021
+                </span></div>
+                 <div class="right wow lightSpeedInRight animate__delay-3s">
+                 	<p class="p3">一个人年轻的时候需要有个幻象，觉得自己参预着人间伟大的活动，在那里革新世界，他的感官会跟着宇宙所有的气息而震动，觉得那么自由，那么轻松。他还没有家室之累，一无所有，无所惧。因为一无所有，所以能慷慨地舍弃一切。</p>
+                </div>
+            </div>
+        </div>
+        <div id="future">
+        	<div class="f1">
+        		<p class="pp1" >你拉我一起看雨</p>
+        		<p class="pp1">大雨里百鬼夜行</p>
+        		<p class="pp1">你我会在其中</p>
+        		<p class="pp1">比鬼还高兴！！</p>
+        	</div>
+
+        	 <div  class="f2">
+        	 	<div class="f3">来都来了看个视频再走啊！！😄</div>
+        	 	<div class="f4" style="width: 500px;height: 380px;margin: 0px auto;">
+        	 		 <iframe width="600px" height="400px" src="image/11.mp4" frameborder=0 allowfullscreen autostart="false"></iframe>
+        	 	</div>
+       
+    </div>
+
+        </div>
+        
+
+	</body>
+</html>
+<script>
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    loop: true,
+    autoplay: 3000,
+    
+});
+</script>
+<script src="./js/wow.min.js">
+</script>
+<script type="text/javascript">
+	new WOW().init();
+</script>
